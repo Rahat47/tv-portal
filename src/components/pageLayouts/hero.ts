@@ -15,6 +15,11 @@ export class HomeGrid extends Component<HTMLElement, Element, PageView> {
         this.element = this.createElement(this.templateString);
         this.attach(false);
         this.configure();
+        new EmptyCard(
+            this.view,
+            `More ${this.title} Coming Soon`,
+            `hero-grid-${this.title}`
+        );
     }
 
     // private heroHTML() {
@@ -74,12 +79,6 @@ export class HomeGrid extends Component<HTMLElement, Element, PageView> {
     }
 
     configure() {
-        new EmptyCard(
-            this.view,
-            `More ${this.title} Coming Soon`,
-            `hero-grid-${this.title}`
-        );
-
         const gameBtn = this.element.querySelector(".game1") as HTMLElement;
         gameBtn.addEventListener("click", this.onGameBtnClicked);
 

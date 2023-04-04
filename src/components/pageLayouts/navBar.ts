@@ -15,44 +15,58 @@ export class NavBar extends Component<HTMLElement, Element, PageView> {
     }
 
     private navBarHTML() {
-        return `
-      <nav class="nav">
-        <a href="/" class="nav-title internal-nav-link">
-          <img class="nav-logo" src="${Logo}" />
-          <span class="nav-title-text">kaamkar</span>
-        </a>
-        <div class="nav-toggle-container">
-          <button class="nav-toggle-btn">
-            <svg class="nav-toggle-icon" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <title>Menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
-            </svg>
-          </button>
-        </div>
-        <div class="nav-sub-container">
-          <div class="nav-links-container">
-            <a href="/projects" class="nav-link internal-nav-link">
-              Projects
-            </a>
-            <a class="nav-link" href="https://nrabhiram.xyz/" target="_blank">
-              Blog
-            </a>
-          </div>
-          
-        </div>
-        <div class="mobile-nav sub-nav-collapsed">
-          <div class="nav-links-container">
-            <a href="/projects" class="nav-link internal-nav-link">
-              Projects
-            </a>
-            <a class="nav-link" href="https://nrabhiram.xyz/" target="_blank">
-              Blog
-            </a>
-          </div>
-          
-        </div>  
-      </nav>
-    `;
+        const html = String.raw;
+
+        return html`
+            <nav class="nav">
+                <a href="/" class="nav-title internal-nav-link">
+                    <img class="nav-logo" src="${Logo}" />
+                    <span class="nav-title-text">kaamkar</span>
+                </a>
+                <div class="nav-toggle-container">
+                    <button class="nav-toggle-btn">
+                        <svg
+                            class="nav-toggle-icon"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <title>Menu</title>
+                            <path
+                                d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"
+                            />
+                        </svg>
+                    </button>
+                </div>
+                <div class="nav-sub-container">
+                    <div class="nav-links-container">
+                        <a href="/projects" class="nav-link internal-nav-link">
+                            Projects
+                        </a>
+                        <a
+                            class="nav-link"
+                            href="https://nrabhiram.xyz/"
+                            target="_blank"
+                        >
+                            Blog
+                        </a>
+                    </div>
+                </div>
+                <div class="mobile-nav sub-nav-collapsed">
+                    <div class="nav-links-container">
+                        <a href="/projects" class="nav-link internal-nav-link">
+                            Projects
+                        </a>
+                        <a
+                            class="nav-link"
+                            href="https://nrabhiram.xyz/"
+                            target="_blank"
+                        >
+                            Blog
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        `;
     }
 
     configure() {
