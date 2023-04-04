@@ -4,12 +4,12 @@ import { Component } from "../component";
 export class EmptyCard extends Component<HTMLElement, Element, PageView> {
     title: string;
 
-    constructor(view: PageView, title: string) {
-        super("app", view);
+    constructor(view: PageView, title: string, hostElementId: string) {
+        super(hostElementId || "app", view);
         this.title = title;
         this.templateString = this.emptyCardHTML();
         this.element = this.createElement(this.templateString);
-        // this.attach(false);
+        this.attach(false);
         this.configure();
     }
 
