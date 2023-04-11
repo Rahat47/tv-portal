@@ -1,5 +1,5 @@
 import { Footer } from "../components/pageLayouts/footer";
-import { HomeGrid } from "../components/pageLayouts/hero";
+import { HomeGrid } from "../components/pageLayouts/homeGrid";
 import { Mesh } from "../components/pageLayouts/mesh";
 import { NavBar } from "../components/pageLayouts/navBar";
 import { PageView } from "./pageView";
