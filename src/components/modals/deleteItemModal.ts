@@ -1,19 +1,19 @@
-import { ProjectView } from '../../view/projectView';
-import { Modal } from './modal';
+import { ProjectView } from "../../view/projectView";
+import { Modal } from "./modal";
 
 export class DeleteItemModal extends Modal {
-  templateString: string;
+    templateString: string;
 
-  constructor(view: ProjectView) {
-    super(view);
-    this.templateString = this.deleteItemModalHTML();
-    this.element = this.createElement(this.templateString);
-    this.attach(true);
-    this.configure();
-  }
+    constructor(view: ProjectView) {
+        super(view);
+        this.templateString = this.deleteItemModalHTML();
+        this.element = this.createElement(this.templateString);
+        this.attach(true);
+        this.configure();
+    }
 
-  private deleteItemModalHTML() {
-    return `
+    private deleteItemModalHTML() {
+        return `
       <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
         <div class="msg-modal-bg hidden modal-bg-ease-out" id="delete-item-modal-background"></div>
         <div class="modal-container" id="delete-item-modal-container">
@@ -43,50 +43,53 @@ export class DeleteItemModal extends Modal {
         </div>
       </div>
     `;
-  }
-
-  configure() {
-    const deleteBtn = this.element.querySelector(
-      '#delete-item-modal-delete-btn'
-    );
-    (this.element as HTMLElement).addEventListener(
-      'click',
-      this.fadeOut.bind(this)
-    );
-    deleteBtn?.addEventListener('click', this.onCallToActionClicked.bind(this));
-  }
-
-  fadeIn() {
-    this.renderModal(
-      'delete-item-modal',
-      'delete-item-modal-background',
-      'delte-item-modal-container'
-    );
-  }
-
-  private fadeOut(e: MouseEvent) {
-    const cancelBtn = (e.target as HTMLElement).matches(
-      '#delete-item-modal-cancel-btn, #delete-item-modal-cancel-btn *'
-    );
-    const modalOverlay = (e.target as HTMLElement).matches(
-      '#delete-item-modal-overlay'
-    );
-    if (cancelBtn || modalOverlay) {
-      (this.view as ProjectView).deleteItemModalClosed();
-      this.removeModal(
-        'delete-item-modal',
-        'delete-item-modal-background',
-        'delete-item-modal-container'
-      );
     }
-  }
 
-  private onCallToActionClicked() {
-    (this.view as ProjectView).deleteItemBtnClicked();
-    this.removeModal(
-      'delete-item-modal',
-      'delete-item-modal-background',
-      'delete-item-modal-container'
-    );
-  }
+    configure() {
+        const deleteBtn = this.element.querySelector(
+            "#delete-item-modal-delete-btn"
+        );
+        (this.element as HTMLElement).addEventListener(
+            "click",
+            this.fadeOut.bind(this)
+        );
+        deleteBtn?.addEventListener(
+            "click",
+            this.onCallToActionClicked.bind(this)
+        );
+    }
+
+    fadeIn() {
+        this.renderModal(
+            "delete-item-modal",
+            "delete-item-modal-background",
+            "delte-item-modal-container"
+        );
+    }
+
+    private fadeOut(e: MouseEvent) {
+        const cancelBtn = (e.target as HTMLElement).matches(
+            "#delete-item-modal-cancel-btn, #delete-item-modal-cancel-btn *"
+        );
+        const modalOverlay = (e.target as HTMLElement).matches(
+            "#delete-item-modal-overlay"
+        );
+        if (cancelBtn || modalOverlay) {
+            (this.view as ProjectView).deleteItemModalClosed();
+            this.removeModal(
+                "delete-item-modal",
+                "delete-item-modal-background",
+                "delete-item-modal-container"
+            );
+        }
+    }
+
+    private onCallToActionClicked() {
+        (this.view as ProjectView).deleteItemBtnClicked();
+        this.removeModal(
+            "delete-item-modal",
+            "delete-item-modal-background",
+            "delete-item-modal-container"
+        );
+    }
 }

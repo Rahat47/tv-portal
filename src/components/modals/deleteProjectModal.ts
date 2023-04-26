@@ -1,19 +1,19 @@
-import { ProjectsListView } from '../../view/projectsListView';
-import { Modal } from './modal';
+import { ProjectsListView } from "../../view/projectsListView";
+import { Modal } from "./modal";
 
 export class DeleteProjectModal extends Modal {
-  templateString: string;
+    templateString: string;
 
-  constructor(view: ProjectsListView) {
-    super(view);
-    this.templateString = this.deleteProjectModalHTML();
-    this.element = this.createElement(this.templateString);
-    this.attach(true);
-    this.configure();
-  }
+    constructor(view: ProjectsListView) {
+        super(view);
+        this.templateString = this.deleteProjectModalHTML();
+        this.element = this.createElement(this.templateString);
+        this.attach(true);
+        this.configure();
+    }
 
-  private deleteProjectModalHTML() {
-    return `
+    private deleteProjectModalHTML() {
+        return `
       <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
         <div class="msg-modal-bg hidden modal-bg-ease-out" id="delete-project-modal-background"></div>
         <div class="modal-container" id="delete-project-modal-container">
@@ -43,50 +43,53 @@ export class DeleteProjectModal extends Modal {
         </div>
       </div>
     `;
-  }
-
-  configure() {
-    const deleteBtn = this.element.querySelector(
-      '#delete-project-modal-delete-btn'
-    );
-    (this.element as HTMLElement).addEventListener(
-      'click',
-      this.fadeOut.bind(this)
-    );
-    deleteBtn?.addEventListener('click', this.onCallToActionClicked.bind(this));
-  }
-
-  fadeIn() {
-    this.renderModal(
-      'delete-project-modal',
-      'delete-project-modal-background',
-      'delete-project-modal-container'
-    );
-  }
-
-  private fadeOut(e: MouseEvent) {
-    const cancelBtn = (e.target as HTMLElement).matches(
-      '#delete-project-modal-cancel-btn, #delete-project-modal-cancel-btn *'
-    );
-    const modalOverlay = (e.target as HTMLElement).matches(
-      '#delete-project-modal-overlay'
-    );
-    (this.view as ProjectsListView).deleteProjectModalClosed();
-    if (cancelBtn || modalOverlay) {
-      this.removeModal(
-        'delete-project-modal',
-        'delete-project-modal-background',
-        'delete-project-modal-container'
-      );
     }
-  }
 
-  private onCallToActionClicked() {
-    (this.view as ProjectsListView).deleteProjectBtnClicked();
-    this.removeModal(
-      'delete-project-modal',
-      'delete-project-modal-background',
-      'delete-project-modal-container'
-    );
-  }
+    configure() {
+        const deleteBtn = this.element.querySelector(
+            "#delete-project-modal-delete-btn"
+        );
+        (this.element as HTMLElement).addEventListener(
+            "click",
+            this.fadeOut.bind(this)
+        );
+        deleteBtn?.addEventListener(
+            "click",
+            this.onCallToActionClicked.bind(this)
+        );
+    }
+
+    fadeIn() {
+        this.renderModal(
+            "delete-project-modal",
+            "delete-project-modal-background",
+            "delete-project-modal-container"
+        );
+    }
+
+    private fadeOut(e: MouseEvent) {
+        const cancelBtn = (e.target as HTMLElement).matches(
+            "#delete-project-modal-cancel-btn, #delete-project-modal-cancel-btn *"
+        );
+        const modalOverlay = (e.target as HTMLElement).matches(
+            "#delete-project-modal-overlay"
+        );
+        (this.view as ProjectsListView).deleteProjectModalClosed();
+        if (cancelBtn || modalOverlay) {
+            this.removeModal(
+                "delete-project-modal",
+                "delete-project-modal-background",
+                "delete-project-modal-container"
+            );
+        }
+    }
+
+    private onCallToActionClicked() {
+        (this.view as ProjectsListView).deleteProjectBtnClicked();
+        this.removeModal(
+            "delete-project-modal",
+            "delete-project-modal-background",
+            "delete-project-modal-container"
+        );
+    }
 }

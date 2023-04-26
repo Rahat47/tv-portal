@@ -1,19 +1,19 @@
-import { ProjectsListView } from '../../view/projectsListView';
-import { Modal } from './modal';
+import { ProjectsListView } from "../../view/projectsListView";
+import { Modal } from "./modal";
 
 export class EditProjectForm extends Modal {
-  templateString: string;
+    templateString: string;
 
-  constructor(view: ProjectsListView) {
-    super(view);
-    this.templateString = this.editProjectFormHTML();
-    this.element = this.createElement(this.templateString);
-    this.attach(true);
-    this.configure();
-  }
+    constructor(view: ProjectsListView) {
+        super(view);
+        this.templateString = this.editProjectFormHTML();
+        this.element = this.createElement(this.templateString);
+        this.attach(true);
+        this.configure();
+    }
 
-  private editProjectFormHTML() {
-    return `
+    private editProjectFormHTML() {
+        return `
       <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
         <div class="form-modal-bg hidden modal-bg-ease-out" id="edit-project-modal-background"></div>
         <div class="modal-container" id="edit-project-modal-container">
@@ -40,67 +40,73 @@ export class EditProjectForm extends Modal {
         </div>
       </div>
     `;
-  }
-
-  configure() {
-    const editProjectForm = this.element.querySelector('form') as HTMLElement;
-    (this.element as HTMLElement).addEventListener(
-      'click',
-      this.fadeOut.bind(this)
-    );
-    editProjectForm.addEventListener('submit', this.onEdit.bind(this));
-  }
-
-  fadeIn(title: string, description: string) {
-    const editTitleInput = document.getElementById('edit-project-title-input');
-    const editDescriptionInput = document.getElementById(
-      'edit-project-description-input'
-    );
-    if (editTitleInput) {
-      (editTitleInput as HTMLInputElement).value = title;
     }
-    if (editDescriptionInput) {
-      (editDescriptionInput as HTMLTextAreaElement).value = description;
-    }
-    this.renderModal(
-      'edit-project-modal',
-      'edit-project-modal-background',
-      'edit-project-modal-container'
-    );
-  }
 
-  private fadeOut(e: MouseEvent) {
-    const modalOverlay = (e.target as HTMLElement).matches(
-      '#edit-project-modal-overlay'
-    );
-    if (modalOverlay) {
-      (this.view as ProjectsListView).editProjectFormClosed();
-      this.removeModal(
-        'edit-project-modal',
-        'edit-project-modal-background',
-        'edit-project-modal-container'
-      );
+    configure() {
+        const editProjectForm = this.element.querySelector(
+            "form"
+        ) as HTMLElement;
+        (this.element as HTMLElement).addEventListener(
+            "click",
+            this.fadeOut.bind(this)
+        );
+        editProjectForm.addEventListener("submit", this.onEdit.bind(this));
     }
-  }
 
-  private onEdit(e: SubmitEvent) {
-    e.preventDefault();
-    const projectTitle = (
-      document.getElementById('edit-project-title-input') as HTMLInputElement
-    ).value;
-    const projectDescription = (
-      document.getElementById(
-        'edit-project-description-input'
-      ) as HTMLTextAreaElement
-    ).value;
-    (this.view as ProjectsListView).editProjectBtnClicked(
-      projectTitle,
-      projectDescription
-    );
-    this.removeModal(
-      'edit-project-modal',
-      'edit-project-modal-background',
-      'edit-project-modal-container'
-    );
-  }
+    fadeIn(title: string, description: string) {
+        const editTitleInput = document.getElementById(
+            "edit-project-title-input"
+        );
+        const editDescriptionInput = document.getElementById(
+            "edit-project-description-input"
+        );
+        if (editTitleInput) {
+            (editTitleInput as HTMLInputElement).value = title;
+        }
+        if (editDescriptionInput) {
+            (editDescriptionInput as HTMLTextAreaElement).value = description;
+        }
+        this.renderModal(
+            "edit-project-modal",
+            "edit-project-modal-background",
+            "edit-project-modal-container"
+        );
+    }
+
+    private fadeOut(e: MouseEvent) {
+        const modalOverlay = (e.target as HTMLElement).matches(
+            "#edit-project-modal-overlay"
+        );
+        if (modalOverlay) {
+            (this.view as ProjectsListView).editProjectFormClosed();
+            this.removeModal(
+                "edit-project-modal",
+                "edit-project-modal-background",
+                "edit-project-modal-container"
+            );
+        }
+    }
+
+    private onEdit(e: SubmitEvent) {
+        e.preventDefault();
+        const projectTitle = (
+            document.getElementById(
+                "edit-project-title-input"
+            ) as HTMLInputElement
+        ).value;
+        const projectDescription = (
+            document.getElementById(
+                "edit-project-description-input"
+            ) as HTMLTextAreaElement
+        ).value;
+        (this.view as ProjectsListView).editProjectBtnClicked(
+            projectTitle,
+            projectDescription
+        );
+        this.removeModal(
+            "edit-project-modal",
+            "edit-project-modal-background",
+            "edit-project-modal-container"
+        );
+    }
 }
