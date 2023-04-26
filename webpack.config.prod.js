@@ -8,7 +8,7 @@ module.exports = {
 	output: {
 		filename: 'bundle.js',
 		path: path.resolve(__dirname, 'dist'),
-		publicPath: '/tv-portal',
+		publicPath: '/',
 		assetModuleFilename: 'assets/[name][ext]',
 		clean: true,
 	},
