@@ -1,0 +1,455 @@
+/*! ../../../../src/gameobjects/GameObject */
+
+/*! ../../../../src/gameobjects/components/Alpha */
+
+/*! ../../../../src/gameobjects/components/BlendMode */
+
+/*! ../../../../src/gameobjects/components/Depth */
+
+/*! ../../../../src/gameobjects/components/Flip */
+
+/*! ../../../../src/gameobjects/components/ScrollFactor */
+
+/*! ../../../../src/gameobjects/components/Transform */
+
+/*! ../../../../src/gameobjects/components/Visible */
+
+/*! ../../../../src/math/angle/CounterClockwise */
+
+/*! ../../../../src/utils/Class */
+
+/*! ../../../../src/utils/NOOP */
+
+/*! ../../../src/loader/MultiFile.js */
+
+/*! ../../../src/loader/filetypes/ImageFile.js */
+
+/*! ../../../src/loader/filetypes/JSONFile.js */
+
+/*! ../../../src/loader/filetypes/TextFile.js */
+
+/*! ../../../src/math/Matrix4 */
+
+/*! ../../../src/plugins/ScenePlugin */
+
+/*! ../../../src/utils/Class */
+
+/*! ../../../src/utils/object/GetFastValue */
+
+/*! ../../../src/utils/object/IsPlainObject */
+
+/*! ../../math/Clamp */
+
+/*! ../../math/Vector2 */
+
+/*! ../../math/angle/Wrap */
+
+/*! ../../math/angle/WrapDegrees */
+
+/*! ../../math/const */
+
+/*! ../../renderer/BlendModes */
+
+/*! ../../utils/Class */
+
+/*! ../../utils/object/GetFastValue */
+
+/*! ../../utils/object/GetValue */
+
+/*! ../../utils/object/IsPlainObject */
+
+/*! ../File */
+
+/*! ../FileTypesManager */
+
+/*! ../Wrap */
+
+/*! ../const */
+
+/*! ../data/DataManager */
+
+/*! ../utils/Class */
+
+/*! ../utils/object/Extend */
+
+/*! ../utils/object/GetFastValue */
+
+/*! ./BasePlugin */
+
+/*! ./BaseSpinePlugin */
+
+/*! ./GetURL */
+
+/*! ./IsPlainObject */
+
+/*! ./MergeXHRSettings */
+
+/*! ./SpineFile */
+
+/*! ./SpineGameObjectRender */
+
+/*! ./SpineGameObjectWebGLRenderer */
+
+/*! ./TransformMatrix */
+
+/*! ./XHRLoader */
+
+/*! ./XHRSettings */
+
+/*! ./components/ToJSON */
+
+/*! ./const */
+
+/*! ./gameobject/SpineGameObject */
+
+/*! SpineWebGL */
+
+/*! eventemitter3 */
+
+/*! no static exports found */
+
+/*!**********************!*\
+  !*** ./SpineFile.js ***!
+  \**********************/
+
+/*!****************************!*\
+  !*** ./BaseSpinePlugin.js ***!
+  \****************************/
+
+/*!*****************************!*\
+  !*** ./SpineWebGLPlugin.js ***!
+  \*****************************/
+
+/*!*********************************!*\
+  !*** ./runtimes/spine-webgl.js ***!
+  \*********************************/
+
+/*!***************************************!*\
+  !*** ./gameobject/SpineGameObject.js ***!
+  \***************************************/
+
+/*!*********************************************!*\
+  !*** ./gameobject/SpineGameObjectRender.js ***!
+  \*********************************************/
+
+/*!****************************************************!*\
+  !*** ./gameobject/SpineGameObjectWebGLRenderer.js ***!
+  \****************************************************/
+
+/*!************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/math/Wrap.js ***!
+  \************************************************************/
+
+/*!*************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/math/Clamp.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/math/const.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/utils/NOOP.js ***!
+  \*************************************************************/
+
+/*!**************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/loader/File.js ***!
+  \**************************************************************/
+
+/*!**************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/utils/Class.js ***!
+  \**************************************************************/
+
+/*!***************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/loader/const.js ***!
+  \***************************************************************/
+
+/*!***************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/math/Matrix4.js ***!
+  \***************************************************************/
+
+/*!***************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/math/Vector2.js ***!
+  \***************************************************************/
+
+/*!****************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/loader/GetURL.js ***!
+  \****************************************************************/
+
+/*!******************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/math/angle/Wrap.js ***!
+  \******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/data/DataManager.js ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/loader/MultiFile.js ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/loader/XHRLoader.js ***!
+  \*******************************************************************/
+
+/*!*********************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/loader/XHRSettings.js ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/plugins/BasePlugin.js ***!
+  \*********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/plugins/ScenePlugin.js ***!
+  \**********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/renderer/BlendModes.js ***!
+  \**********************************************************************/
+
+/*!**********************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/utils/object/Extend.js ***!
+  \**********************************************************************/
+
+/*!************************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/utils/object/GetValue.js ***!
+  \************************************************************************/
+
+/*!*************************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/gameobjects/GameObject.js ***!
+  \*************************************************************************/
+
+/*!*************************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/math/angle/WrapDegrees.js ***!
+  \*************************************************************************/
+
+/*!**************************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/loader/FileTypesManager.js ***!
+  \**************************************************************************/
+
+/*!**************************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/loader/MergeXHRSettings.js ***!
+  \**************************************************************************/
+
+/*!****************************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/loader/filetypes/JSONFile.js ***!
+  \****************************************************************************/
+
+/*!****************************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/loader/filetypes/TextFile.js ***!
+  \****************************************************************************/
+
+/*!****************************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/utils/object/GetFastValue.js ***!
+  \****************************************************************************/
+
+/*!*****************************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/loader/filetypes/ImageFile.js ***!
+  \*****************************************************************************/
+
+/*!*****************************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/utils/object/IsPlainObject.js ***!
+  \*****************************************************************************/
+
+/*!******************************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/gameobjects/components/Flip.js ***!
+  \******************************************************************************/
+
+/*!******************************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/math/angle/CounterClockwise.js ***!
+  \******************************************************************************/
+
+/*!*******************************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/node_modules/eventemitter3/index.js ***!
+  \*******************************************************************************/
+
+/*!*******************************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/gameobjects/components/Alpha.js ***!
+  \*******************************************************************************/
+
+/*!*******************************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/gameobjects/components/Depth.js ***!
+  \*******************************************************************************/
+
+/*!********************************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/gameobjects/components/ToJSON.js ***!
+  \********************************************************************************/
+
+/*!*********************************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/gameobjects/components/Visible.js ***!
+  \*********************************************************************************/
+
+/*!***********************************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/gameobjects/components/BlendMode.js ***!
+  \***********************************************************************************/
+
+/*!***********************************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/gameobjects/components/Transform.js ***!
+  \***********************************************************************************/
+
+/*!**************************************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/gameobjects/components/ScrollFactor.js ***!
+  \**************************************************************************************/
+
+/*!*****************************************************************************************!*\
+  !*** /Users/rich/Documents/GitHub/phaser/src/gameobjects/components/TransformMatrix.js ***!
+  \*****************************************************************************************/
+
+/**
+           * @author       Richard Davey <rich@photonstorm.com>
+           * @copyright    2018 Photon Storm Ltd.
+           * @license      {@link https://github.com/photonstorm/phaser/blob/master/license.txt|MIT License}
+           */
+
+/**
+           * @author       Richard Davey <rich@photonstorm.com>
+           * @copyright    2018 Photon Storm Ltd.
+           * @license      {@link https://github.com/photonstorm/phaser3-plugin-template/blob/master/LICENSE|MIT License}
+           */
+
+/**
+ * @author       Florian Vazelle
+ * @author       Geoffrey Glaive
+ * @copyright    2020 Photon Storm Ltd.
+ * @license      {@link https://opensource.org/licenses/MIT|MIT License}
+ */
+
+/**
+ * @author       Jason Nicholls <nicholls.jason@gmail.com>
+ * @copyright    2018 Photon Storm Ltd.
+ * @license      {@link https://github.com/photonstorm/phaser/blob/master/license.txt|MIT License}
+ */
+
+/**
+ * @author       Joachim Grill <joachim@codeandweb.com>
+ * @author       Richard Davey <rich@photonstorm.com>
+ * @copyright    2018 CodeAndWeb GmbH
+ * @copyright    2020 Photon Storm Ltd.
+ * @license      {@link https://opensource.org/licenses/MIT|MIT License}
+ */
+
+/**
+ * @author       Niklas von Hertzen (https://github.com/niklasvh/base64-arraybuffer)
+ * @author       Richard Davey <rich@photonstorm.com>
+ * @copyright    2020 Photon Storm Ltd.
+ * @license      {@link https://opensource.org/licenses/MIT|MIT License}
+ */
+
+/**
+ * @author       Richard Davey
+ * @copyright    2020 Photon Storm Ltd.
+ * @license      {@link https://opensource.org/licenses/MIT|MIT License}
+ */
+
+/**
+ * @author       Richard Davey <rich@photonstorm.com>
+ * @author       @samme
+ * @copyright    2020 Photon Storm Ltd.
+ * @license      {@link https://opensource.org/licenses/MIT|MIT License}
+ */
+
+/**
+ * @author       Richard Davey <rich@photonstorm.com>
+ * @author       Angry Bytes (and contributors)
+ * @copyright    2020 Photon Storm Ltd.
+ * @license      {@link https://opensource.org/licenses/MIT|MIT License}
+ */
+
+/**
+ * @author       Richard Davey <rich@photonstorm.com>
+ * @author       Benjamin D. Richards <benjamindrichards@gmail.com>
+ * @copyright    2020 Photon Storm Ltd.
+ * @license      {@link https://opensource.org/licenses/MIT|MIT License}
+ */
+
+/**
+ * @author       Richard Davey <rich@photonstorm.com>
+ * @author       Felipe Alfonso <@bitnenfer>
+ * @author       Matthew Groves <@doormat>
+ * @copyright    2020 Photon Storm Ltd.
+ * @license      {@link https://opensource.org/licenses/MIT|MIT License}
+ */
+
+/**
+ * @author       Richard Davey <rich@photonstorm.com>
+ * @author       Felipe Alfonso <@bitnenfer>
+ * @copyright    2020 Photon Storm Ltd.
+ * @license      {@link https://opensource.org/licenses/MIT|MIT License}
+ */
+
+/**
+ * @author       Richard Davey <rich@photonstorm.com>
+ * @author       Florian Mertens
+ * @copyright    2020 Photon Storm Ltd.
+ * @license      {@link https://opensource.org/licenses/MIT|MIT License}
+ */
+
+/**
+ * @author       Richard Davey <rich@photonstorm.com>
+ * @author       Igor Ognichenko <ognichenko.igor@gmail.com>
+ * @copyright    2020 Photon Storm Ltd.
+ * @license      {@link https://opensource.org/licenses/MIT|MIT License}
+ */
+
+/**
+ * @author       Richard Davey <rich@photonstorm.com>
+ * @author       Pavle Goloskokovic <pgoloskokovic@gmail.com> (http://prunegames.com)
+ * @copyright    2020 Photon Storm Ltd.
+ * @license      {@link https://opensource.org/licenses/MIT|MIT License}
+ */
+
+/**
+ * @author       Richard Davey <rich@photonstorm.com>
+ * @author       samme <samme.npm@gmail.com>
+ * @copyright    2020 Photon Storm Ltd.
+ * @license      {@link https://opensource.org/licenses/MIT|MIT License}
+ */
+
+/**
+ * @author       Richard Davey <rich@photonstorm.com>
+ * @copyright    2020 Photon Storm Ltd.
+ * @license      {@link https://opensource.org/licenses/MIT|MIT License}
+ */
+
+/**
+ * @author       Seth Berrier <berriers@uwstout.edu>
+ * @copyright    2020 Photon Storm Ltd.
+ * @license      {@link https://opensource.org/licenses/MIT|MIT License}
+ */
+
+/**
+ * @author       Stefan Hedman <schteppe@gmail.com> (http://steffe.se)
+ * @license      {@link https://opensource.org/licenses/MIT|MIT License}
+ */
+
+/**
+ * @author       Vladimir Agafonkin
+ * @author       Richard Davey <rich@photonstorm.com>
+ * @copyright    2020 Photon Storm Ltd.
+ * @license      {@link https://opensource.org/licenses/MIT|MIT License}
+ */
+
+/**
+ * @author       pi-kei
+ * @copyright    2020 Photon Storm Ltd.
+ * @license      {@link https://opensource.org/licenses/MIT|MIT License}
+ */
+
+/**
+ * @author       samme
+ * @copyright    2020 Photon Storm Ltd.
+ * @license      {@link https://opensource.org/licenses/MIT|MIT License}
+ */
+
+/**
+ * @author       samme
+ * @copyright    2021 Photon Storm Ltd.
+ * @license      {@link https://opensource.org/licenses/MIT|MIT License}
+ */
+
+/**
+* @author       Richard Davey <rich@photonstorm.com>
+* @copyright    2020 Photon Storm Ltd.
+* @license      {@link https://github.com/photonstorm/phaser3-plugin-template/blob/master/LICENSE|MIT License}
+*/
