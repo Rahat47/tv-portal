@@ -15,7 +15,7 @@ export class SettingsModal extends Modal {
     private settingsModalHTML() {
         const html = String.raw;
 
-        return html` <h1>Settings</h1> `;
+        return html` <h1>Settings Modal</h1> `;
     }
 
     configure() {}
