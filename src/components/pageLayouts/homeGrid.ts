@@ -22,33 +22,6 @@ export class HomeGrid extends Component<HTMLElement, Element, PageView> {
         );
     }
 
-    // private heroHTML() {
-    //     return `
-    // 	<div class="hero">
-    // 		<h1 class="hero-title">
-    // 			<span class="block">Stay on top of </span>
-    // 			<span class="block">the important stuff</span>
-    // 		</h1>
-    // 		<p class="hero-description">
-    // 			With kaamkar, effortlessly identify what needs to get done, organize tasks, and get a clearer picture of the project timeline.
-    // 		</p>
-    // 		<div class="hero-btn-container hero-projects-link">
-    // 			<button type="button" class="hero-add-btn newproject">
-    // 				Create Project
-    // 			</button>
-    // 			<button type="button" class="hero-add-btn game1 ">
-    // 				Game 1
-    // 			</button>
-    // 			<button type="button" class="hero-add-btn game2 ">
-    // 				Game 2
-    // 			</button>
-    // 			<button type="button" class="hero-add-btn game3 ">
-    // 				Game 3
-    // 			</button>
-    // 		</div>
-    // 	</div>
-    // `;
-    // }
     private heroHTML() {
         const html = String.raw;
 
@@ -61,8 +34,8 @@ export class HomeGrid extends Component<HTMLElement, Element, PageView> {
                             game => `
         <li class="relative">
         <div class="hero-card">
-        <a href="#" 
-        class="${game.path}">
+        <a 
+        class="${game.path} anchor">
           <img class="hero-card--image" src="${game.image}" alt="Card Image">
         </a>
         <div class="hero-card--info">

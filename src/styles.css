@@ -554,3 +554,7 @@
 .grow {
     @apply flex-grow;
 }
+
+.anchor {
+    @apply cursor-pointer;
+}

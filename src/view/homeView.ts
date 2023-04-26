@@ -54,7 +54,7 @@ export class HomeView extends PageView {
     render() {
         this.clear();
         new Mesh(this);
-        new NavBar(this);
+        // new NavBar(this);
         new HomeGrid(this, "Games", games);
         new HomeGrid(this, "Learning", learning);
         new Footer(this);
