@@ -797,11 +797,18 @@ select {
   animation-delay: 4s;
 }
 
+/* .app {
+    @apply min-h-screen bg-dark-300 flex flex-col w-full;
+} */
+
 .app {
+  margin: auto;
   display: flex;
-  min-height: 100vh;
+  max-height: 600px;
   width: 100%;
+  max-width: 1024px;
   flex-direction: column;
+  overflow: hidden;
   --tw-bg-opacity: 1;
   background-color: rgb(25 25 25 / var(--tw-bg-opacity));
 }
@@ -1263,12 +1270,15 @@ select {
 }
 
 .footer {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  padding: 2.5rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
   --tw-text-opacity: 1;
@@ -1290,7 +1300,7 @@ select {
   border-style: none;
   --tw-bg-opacity: 1;
   background-color: rgb(63 63 70 / var(--tw-bg-opacity));
-  padding: 1rem;
+  padding: 0.75rem;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
@@ -1340,12 +1350,14 @@ select {
   position: relative;
   display: block;
   width: 100%;
+  max-width: 10rem;
   border-radius: 0.5rem;
   border-width: 2px;
   border-style: dashed;
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
-  padding: 3rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   text-align: center;
 }
 
@@ -1437,22 +1449,17 @@ select {
 }
 
 .hero-title {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-@media (min-width: 1024px) {
-  .hero-title {
-    font-size: 3.75rem;
-    line-height: 1;
-  }
-}
-
 .hero-card {
-  max-width: 24rem;
+  max-width: 10rem;
   overflow: hidden;
   border-radius: 0.25rem;
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
