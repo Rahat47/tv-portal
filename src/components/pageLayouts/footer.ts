@@ -2,8 +2,11 @@ import { PageView } from "../../view/pageView";
 import { Component } from "../component";
 
 export class Footer extends Component<HTMLElement, Element, PageView> {
-    constructor(view: PageView) {
+    private onClick?: () => void;
+
+    constructor(view: PageView, onClick?: () => void) {
         super("app", view);
+        this.onClick = onClick;
         this.templateString = this.footerHTML();
         this.element = this.createElement(this.templateString);
         this.attach(false);
@@ -48,7 +51,7 @@ export class Footer extends Component<HTMLElement, Element, PageView> {
         ) as HTMLButtonElement;
 
         settingButton.addEventListener("click", () => {
-            alert("Setting button clicked");
+            this?.onClick?.();
         });
     }
 }

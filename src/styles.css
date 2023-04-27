@@ -32,7 +32,7 @@
 } */
 
 .app {
-    @apply max-h-[600px] max-w-[1024px] bg-dark-300 flex flex-col overflow-hidden w-full m-auto;
+    @apply max-h-[600px] max-w-[1024px] bg-dark-300 flex flex-col overflow-hidden w-full m-auto relative;
 }
 
 .bg {
@@ -351,7 +351,7 @@
 }
 
 .modal-container {
-    @apply fixed inset-0 z-10 overflow-y-auto;
+    @apply absolute inset-0 z-10 overflow-y-auto z-50;
 }
 
 .form-container {
