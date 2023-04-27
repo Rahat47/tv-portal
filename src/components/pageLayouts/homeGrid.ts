@@ -52,15 +52,6 @@ export class HomeGrid extends Component<HTMLElement, Element, PageView> {
     }
 
     configure() {
-        // const gameBtn = this.element.querySelector(".game1") as HTMLElement;
-        // gameBtn.addEventListener("click", this.onGameBtnClicked);
-
-        // const game2Btn = this.element.querySelector(".game2") as HTMLElement;
-        // game2Btn.addEventListener("click", this.onGame2BtnClicked);
-
-        // const game3Btn = this.element.querySelector(".game3") as HTMLElement;
-        // game3Btn.addEventListener("click", this.onGame3BtnClicked);
-
         this.items.forEach(item => {
             const gameBtn = this.element.querySelector(
                 `.${item.path}`
@@ -70,13 +61,6 @@ export class HomeGrid extends Component<HTMLElement, Element, PageView> {
             });
         });
     }
-
-    // private onGameBtnClicked() {
-    //     const path = this.items[0].path;
-
-    //     history.pushState(null, "", path);
-    //     new Router().route();
-    // }
 
     private onGameBtnClicked(id: number) {
         const game = this.items.find(item => item.id === id);
