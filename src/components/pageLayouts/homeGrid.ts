@@ -1,6 +1,6 @@
 import { Router } from "../../router";
 import { PageView } from "../../view/pageView";
-import { EmptyCard } from "../cards/emptyCard";
+import { EmptyCard } from "../cards/emptyCard/emptyCard";
 import { Component } from "../component";
 
 export class HomeGrid extends Component<HTMLElement, Element, PageView> {

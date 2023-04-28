@@ -1,0 +1,10 @@
+[
+    {
+        "type": "svg",
+        "html": "<svg\r\n                    xmlns=\"http://www.w3.org/2000/svg\"\r\n                    fill=\"none\"\r\n                    viewBox=\"0 0 24 24\"\r\n                    stroke-width=\"1.5\"\r\n                    stroke=\"currentColor\"\r\n                    class=\"empty-card--svg\"\r\n                >\r\n                    <path\r\n                        stroke-linecap=\"round\"\r\n                        stroke-linejoin=\"round\"\r\n                        d=\"M12 6v12m6-6H6\"\r\n                    />\r\n                </svg>"
+    },
+    {
+        "type": "title",
+        "class": "empty-card--title"
+    }
+]
