@@ -1,0 +1,71 @@
+[
+    {
+        "type": "Object",
+        "position": "Top",
+        "value": [
+            {
+                "type": "Text",
+                "message": "Games",
+                "class": "my-test-style1"
+            },
+            {
+                "type": "Carousel",
+                "items": [
+                    {
+                        "id": "1",
+                        "name": "Game 1",
+                        "image": "https://via.placeholder.com/420x280?text=Game+2",
+                        "path": "game1"
+                    },
+                    {
+                        "id": "2",
+                        "name": "Game 2",
+                        "image": "https://via.placeholder.com/420x280?text=Game+2",
+                        "path": "game2"
+                    },
+                    {
+                        "id": "3",
+                        "name": "Game 3",
+                        "image": "https://via.placeholder.com/420x280?text=Game+2",
+                        "path": "game3"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "Object",
+        "position": "Bottom",
+        "value": [
+            {
+                "type": "Text",
+                "message": "E-learning",
+                "class": "my-test-style2"
+            },
+            {
+                "type": "Carousel",
+                "class": "carrousel",
+                "items": [
+                    {
+                        "id": "1",
+                        "name": "Elearling 1",
+                        "image": "https://via.placeholder.com/420x280?text=Game+2",
+                        "path": "game1"
+                    },
+                    {
+                        "id": "2",
+                        "name": "Elearling 2",
+                        "image": "https://via.placeholder.com/420x280?text=Game+2",
+                        "path": "game2"
+                    },
+                    {
+                        "id": "3",
+                        "name": "Elearling 3",
+                        "image": "https://via.placeholder.com/420x280?text=Game+2",
+                        "path": "game3"
+                    }
+                ]
+            }
+        ]
+    }
+]

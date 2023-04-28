@@ -1,4 +1,4 @@
-import { HomeView } from "./view/homeView";
+import { HomeView } from "./view/homeView/homeView";
 import { NotFoundView } from "./view/NotFoundView";
 import { ProjectsListView } from "./view/projectsListView";
 import { ProjectView } from "./view/projectView";

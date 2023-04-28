@@ -15,7 +15,7 @@ interface TextItem {
 }
 
 interface CarouselItem {
-    type: "Carsousel";
+    type: "Carrousel";
     class?: string;
     items: {
         name: string;

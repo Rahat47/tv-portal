@@ -1,5 +1,5 @@
 import { Modal } from "./modal";
-import { HomeView } from "../../view/homeView";
+import { HomeView } from "../../view/homeView/homeView";
 
 export class SettingsModal extends Modal {
     templateString: string;
